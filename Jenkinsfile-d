@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    deleteDir()
     stages {
         stage('Check') {
                 steps {
@@ -11,9 +10,9 @@ pipeline {
 	    stage('Clone'){
 		    
 		steps {
-			//sh'rm -rf test1'
-			checkout scm
-			//sh 'git clone https://github.com/Arslan160572/test.git'
+			sh'rm -rf test1'
+			//checkout scm
+			sh 'git clone https://github.com/Arslan160572/test1.git'
         }
 	    }
         stage('Run') {
