@@ -12,8 +12,8 @@ pipeline {
 		    
 		steps {
 			//sh'rm -rf test1'
-			//checkout scm
-			sh 'git clone https://github.com/Arslan160572/test.git'
+			checkout scm
+			//sh 'git clone https://github.com/Arslan160572/test.git'
         }
 	    }
         stage('Run') {
