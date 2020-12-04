@@ -11,16 +11,16 @@ pipeline {
 		    
 		steps {
 			sh'rm -rf test1'
-			//checkout scm
-			sh 'git clone https://github.com/Arslan160572/test1.git'
+			checkout scm
+			//sh 'git clone https://github.com/Arslan160572/test1.git'
         }
 	    }
         stage('Run') {
 		steps {
 		
 		// app = docker.build('dtest1' ,'-f ./Dockerfile .')
-		// app = docker.build("dtest1")
-		  sh' docker image build -t dtest1 .'
+		 app = docker.build("dtest1")
+		//  sh' docker image build -t dtest1 .'
                   sh'docker run -it -p 80:80 -d dtest1'
 	
 			
